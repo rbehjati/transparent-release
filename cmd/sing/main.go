@@ -13,6 +13,14 @@
 // limitations under the License.
 
 // Run with `go run cmd/sing/main.go -- provenance_path ./schema/amber-slsa-buildtype/v1/example.json`
+// Based on:
+// Github workflow: https://github.com/slsa-framework/slsa-github-generator-go/blob/main/.github/workflows/slsa3_builder.yml
+// The builder called in the GitHub workflow: https://github.com/slsa-framework/slsa-github-generator-go/blob/a900ab996010a467eaea77e86f82283909a3cfff/builders/go/main.go#L87
+// The specification of the workflow, and the use of Fulcio: https://github.com/slsa-framework/slsa-github-generator-go/blob/2b2bf8753ae8ab14332b72217daf3c2c670272b3/SPECIFICATIONS.md
+// The Fulcio Signer that we should be able to use: https://github.com/slsa-framework/slsa-github-generator/blob/main/signing/sigstore/fulcio.go
+//
+// This seems to be where we get stuck: https://github.com/sigstore/cosign/blob/1a038482dd2e2b47131c1f2211db218e430ec9b8/pkg/providers/interface.go#L51
+// - We need to enable a provider for provisioning signing keys with Fulcio.
 
 package main
 
